@@ -17,11 +17,12 @@ void ScreenRenderer::Blit() const
 
 	unsigned int bufferOffset = 0;
 	for (int y = 0; y < c_Display_Y; y++) {
-		std::copy(m_Buffer + bufferOffset, m_Buffer + bufferOffset + c_Display_X - 1, std::ostream_iterator<char>(std::cout, ""));
+		std::fwrite(m_Buffer + bufferOffset, c_Display_X, 1, stderr);
 		std::cout << "\n";
 
 		bufferOffset += c_Display_X;
 	}
+
 }
 
 void ScreenRenderer::Clear()

@@ -1,2 +1,30 @@
-﻿  main.cpp
+﻿  ScreenRenderer.cpp
+C:\Git\Console3DRenderer\Console3DRenderer\src\Display\ScreenRenderer.cpp(5,31): warning C4244: "return": Konvertierung von "T" in "unsigned int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Git\Console3DRenderer\Console3DRenderer\src\Display\ScreenRenderer.cpp(43,22): warning C4244: "Initialisierung": Konvertierung von "T" in "int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Git\Console3DRenderer\Console3DRenderer\src\Display\ScreenRenderer.cpp(43,15): warning C4244: "Initialisierung": Konvertierung von "T" in "const int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Git\Console3DRenderer\Console3DRenderer\src\Display\ScreenRenderer.cpp(44,22): warning C4244: "Initialisierung": Konvertierung von "T" in "int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Git\Console3DRenderer\Console3DRenderer\src\Display\ScreenRenderer.cpp(44,15): warning C4244: "Initialisierung": Konvertierung von "T" in "const int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+  Scene.cpp
+C:\Git\Console3DRenderer\Console3DRenderer\src\Renderer\Scene.cpp(13,10): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+  Code wird generiert...
   Console3DRenderer.vcxproj -> C:\Git\Console3DRenderer\x64\Debug\Console3DRenderer.exe

@@ -65,5 +65,5 @@ void Scene::Update(float dt)
 
 void Scene::UpdateVertex(float dt, glm::mat4& model)
 {
-	model = glm::rotate(model, glm::radians(1.f), glm::vec3(1.0f, 1.0f, 0.0f));
+	model = glm::rotate(model, glm::radians(1.f), glm::vec3(0.8f, 0.7f, 0.1f));
 }
