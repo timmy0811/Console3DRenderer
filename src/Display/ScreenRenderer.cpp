@@ -1,6 +1,6 @@
 #include "ScreenRenderer.h"
 
-inline unsigned int ScreenRenderer::CoordToIndex(glm::vec2& coord)
+inline unsigned int ScreenRenderer::CoordToIndex(const glm::vec2& coord)
 {
 	return coord.y * c_Display_X + coord.x;
 }
@@ -29,14 +29,14 @@ void ScreenRenderer::Clear()
 	std::fill_n(m_Buffer, std::size(m_Buffer), m_Background);
 }
 
-void ScreenRenderer::DrawPoint(glm::vec2&& position)
+void ScreenRenderer::DrawPoint(const glm::vec2& position)
 {
 	unsigned int i = CoordToIndex(position);
 	if (i < 0 || i > c_Display_X * c_Display_Y - 1) return;
 	m_Buffer[i] = 'X';
 }
 
-void ScreenRenderer::DrawLine(glm::vec2& p1, glm::vec2& p2, const bool drawEndpoints)
+void ScreenRenderer::DrawLine(const glm::vec2& p1, const glm::vec2& p2, const bool drawEndpoints)
 {
 	// Using Bresenham rasterisation algorithm
 	const int dx = p2.x - p1.x;

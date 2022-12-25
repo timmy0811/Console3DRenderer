@@ -11,7 +11,7 @@ private:
 	char m_Buffer[c_Display_X * c_Display_Y];
 	char m_Background;
 
-	inline unsigned int CoordToIndex(glm::vec2& coord);
+	inline unsigned int CoordToIndex(const glm::vec2& coord);
 
 public:
 	ScreenRenderer() = default;
@@ -20,7 +20,7 @@ public:
 	void Blit() const;
 	void Clear();
 
-	void DrawPoint(glm::vec2&& position);
-	void DrawLine(glm::vec2& p1, glm::vec2& p2, const bool drawEndpoints = true);
+	void DrawPoint(const glm::vec2& position);
+	void DrawLine(const glm::vec2& p1, const glm::vec2& p2, const bool drawEndpoints = true);
 };
 

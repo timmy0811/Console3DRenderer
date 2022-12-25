@@ -7,8 +7,6 @@
 #include "Display/ScreenRenderer.h"
 #include "Renderer/Scene.h"
 
-#include "Renderer/Object/Cube.h"
-
 int main() {
 	// Setting up console
 	CONSOLE_FONT_INFOEX cfi;
@@ -21,16 +19,16 @@ int main() {
 	cfi.FontWeight = FW_NORMAL;
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 
-	// Generating Scene
+	// Creating Display and Scene
 	ScreenRenderer Display = ScreenRenderer(' ');
 	bool isRunning = true;
 
 	Scene SceneExample = Scene();
-	//SceneExample.Add<Cube>(1.f, { 0.f, 0.f, 0.f });
+	SceneExample.Add<Cube>(0.5f, { 0, 0, 0 });
 
 	// Main Render-Loop
 	int i = 0;
-	while (isRunning) {
+	while (true) {
 		if (i > 60) isRunning = false;
 		i++;
 
@@ -38,7 +36,6 @@ int main() {
 
 		SceneExample.Update(1.f);
 		SceneExample.Render(&Display);
-
 
 		Display.Blit();
 	}

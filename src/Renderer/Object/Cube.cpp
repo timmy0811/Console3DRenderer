@@ -1,6 +1,6 @@
 #include "Cube.h"
 
-Cube::Cube(const float size, const glm::vec3&& position)
+Cube::Cube(const float size, const glm::vec3& position)
 {
 	m_Points[0] = { position.x - size / 2.f, position.y - size / 2.f, position.z - size / 2.f };
 	m_Points[1] = { position.x + size / 2.f, position.y - size / 2.f, position.z - size / 2.f };

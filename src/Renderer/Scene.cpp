@@ -5,6 +5,8 @@ glm::vec2 Scene::RenderPoint(glm::vec3& position, glm::mat4& model, ScreenRender
 	// Projection to Clip Space
 	glm::vec4 FragmentPos = m_View * model * glm::vec4(position, 1.f);
 
+	// TODO: Make use of perspective projection matrix
+
 	// Clip when behind the camera
 	if (FragmentPos.z < 0) return { -1, -1 };
 
@@ -28,8 +30,6 @@ Scene::Scene()
 	:m_View(1.f), m_Projection(glm::perspective(glm::radians(45.f), static_cast<float>(c_Display_X / c_Display_Y), 0.1f, 100.f))
 {
 	m_View = glm::translate(m_View, glm::vec3(0.f, 0.f, 4.f));
-
-	m_Objects.push_back(new Cube(0.5f, { 0.f, 0.f, 0.f }));
 }
 
 Scene::~Scene()
@@ -50,7 +50,7 @@ void Scene::Render(ScreenRenderer* canvas)
 			obj->SetVertexPosition(RenderPoint(*(pointAlloc + i), obj->GetModel(), canvas), i);
 		}
 
-		// Call Render function on object
+		// Connect edges on Meshes together
 		obj->RenderEdges(canvas);
 	}
 }
@@ -66,10 +66,4 @@ void Scene::Update(float dt)
 void Scene::UpdateVertex(float dt, glm::mat4& model)
 {
 	model = glm::rotate(model, glm::radians(1.f), glm::vec3(1.0f, 1.0f, 0.0f));
-}
-
-template<class T>
-void Scene::Add(const float size, glm::vec3&& position)
-{
-	m_Objects.push_back(new T(size, position));
 }

@@ -11,7 +11,7 @@
 class Scene
 {
 private:
-	std::vector<Cube*> m_Objects;
+	std::vector<Object*> m_Objects;
 
 	glm::mat4 m_Projection;
 	glm::mat4 m_View;
@@ -25,8 +25,14 @@ public:
 	~Scene();
 
 	template<class T>
-	void Add(const float size, glm::vec3&& position);
+	void Add(const float size, const glm::vec3& position);
 
 	void Render(ScreenRenderer* canvas);
 	void Update(float dt);
 };
+
+template<class T>
+void Scene::Add(const float size, const glm::vec3& position)
+{
+	m_Objects.push_back(new T(size, position));
+}

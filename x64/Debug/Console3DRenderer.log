@@ -1,3 +1,2 @@
-﻿  Scene.cpp
-C:\Git\Console3DRenderer\Console3DRenderer\src\Renderer\Scene.cpp(11,10): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+﻿  main.cpp
   Console3DRenderer.vcxproj -> C:\Git\Console3DRenderer\x64\Debug\Console3DRenderer.exe
